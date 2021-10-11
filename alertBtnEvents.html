@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alert Button Events</title>
+  </head>
+  <body></body>
+
+  <script>
+
+      
+    const showBtn = document.createElement("button");
+    showBtn.textContent = "Show";
+    showBtn.style.padding = "10px";
+    showBtn.style.width = "200px";
+    showBtn.style.marginLeft = "30%";
+    showBtn.style.marginTop = "25px";
+    showBtn.style.fontSize = "20px";
+    showBtn.style.backgroundColor = "black";
+    showBtn.style.color = "white";
+    document.body.append(showBtn);
+
+    var div = document.createElement("div");
+      div.id = "container";
+      document.body.appendChild(div);
+
+
+    showBtn.addEventListener("click", () => {
+        document.getElementById("container").innerHTML = "";
+      for (let i = 0; i < 5; i++) {
+        var Btn = document.createElement("button");
+        Btn.textContent = `${i+1}`;
+        Btn.style.padding = "10px";
+        Btn.style.width = "200px";
+        Btn.style.marginLeft = "30%";
+        Btn.style.marginTop = "25px";
+        Btn.style.fontSize = "20px";
+        Btn.style.backgroundColor = "yellow";
+        Btn.style.color = "black";
+        Btn.addEventListener("click",clickHandler);
+        document.getElementById("container").appendChild(Btn);
+      }
+    });
+
+    const clickHandler = ()=>{
+        alert(event.target.textContent);
+    }
+  </script>
+</html>
